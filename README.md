@@ -1,46 +1,76 @@
 # otto assistant
 
-## Installation
+Otto is a voice assistant originally developed for my Raspberry Pi to control my room from an online UI.
 
-Required external packages
+## Requirements
 
-1. gTTS
-2. SpeechRecognition
-3. playsound
-4. PyAudio
+- Python 3.6.7
 
-Use pip to install all packages
+## Downloading
+
+If you have [Git](https://git-scm.com/) installed, you can run the following from your terminal:
+
 ```
-pip install <package>
+git clone https://github.com/dsgnhb/discord-bot.git
 ```
 
-## How to use
+This will clone this repository and download it to your computer.
 
-Just start the `otto.py` file from the command line.
+## Installing packages
+
+Use pip to install all required packages.
+Navigate into your OS folder and install all modules from the `requirements.txt`.
+
+```
+pip install -r requirements.txt
+```
+
+## Usage
+
+Run the `otto.py` script from your command prompt or just start the file by double-clicking.
+
 ```
 python otto.py
 ```
-After that you can use the assistant by saying the keyword "Otto" and your question.
+
+After that you can use the assistant by saying the default keyword "Otto" followed by your question.
 
 Note: Otto is in German by default
 
-Example:
+**Example**
 
-> Otto, wie ist das Wetter?
+Weather
+> Otto, wie ist das Wetter heute?
 
-or
+News
+> Otto, was gibt's Neues?
 
-> Otto, Timer auf 10 Sekunden
+Info
+> Otto, wer ist Barack Obama
 
-## Change keyword
+To stop the assistant just close the window or - when using the terminal - interrupt the program with `ctrl + c`.
 
-You can easily change the keyword by editing the `settings.json`.
-Just change directory to `data/settings` and open the JSON file.
+## Setup
+
+You can easily change the keyword or city by editing the `settings.json`.
+Just change the directory to `data/settings` and open the JSON file.
+
+**Example**
+
+default
+```json
+{
+  "keyword": "otto",
+  "language": "de-DE",
+  "location": "berlin"
+}
 ```
-cd data/settings
+
+changed keyword to "Anna" and location to "Hamburg"
+```json
+{
+  "keyword": "anna",
+  "language": "de-DE",
+  "location": "hamburg"
+}
 ```
-```
-nano settings.json
-```
-Then change this line `"keyword": "otto",` to `"keyword": "your_key_word"`.
-The assistant will now answer to your new keyword.
