@@ -85,11 +85,11 @@ class AI:
 
         # define standard variables / settings (from settings.json)
         # set location
-        location = settings["location"]
+        location = settings["location"].lower()
         # declare language
         language = settings["language"]
         # set keyword
-        key_word = settings["keyword"]
+        key_word = settings["keyword"].lower()
 
         # timer
         timer = None
