@@ -1,0 +1,115 @@
+{
+  "echo": [
+    "sprich mir nach",
+    "wiederhole",
+    "sage"
+  ],
+  "uhr": [
+    "wie spät ist es",
+    "wie viel uhr ist es",
+    "was ist die uhrzeit",
+    "wie ist die uhrzeit",
+    "was sagt die uhr",
+    "wie viel uhr ist das"
+  ],
+  "leiser": [
+    "mach die musik leiser",
+    "musik leiser",
+    "leiser"
+  ],
+  "nachrichten": [
+    "was gibt es neues",
+    "was gibt's neues",
+    "gib mir meine tägliche dosis politik",
+    "was sind die nachrichten"
+  ],
+  "wetterbericht": [
+    "wie wird das wetter",
+    "wie ist das wetter morgen",
+    "wie wird das wetter morgen sein",
+    "wie warm ist es morgen",
+    "wie kalt is es morgen",
+    "wie warm wird es",
+    "wie kalt wird es",
+    "wird es morgen kalt",
+    "wird es morgen warm",
+    "wie ist der wetterbericht",
+    "was sagt der wetterbericht",
+    "wie werden die temperaturen"
+  ],
+  "wetter": [
+    "wie ist das wetter",
+    "wie ist das wetter heute",
+    "wie warm ist es",
+    "wie kalt ist es",
+    "wie sind die temperaturen",
+    "regnet es",
+    "scheint die sonne"
+  ],
+  "datum": [
+    "welches datum haben wir heute",
+    "welches datum ist heute"
+  ],
+  "tag": [
+    "welcher tag ist heute",
+    "welchen tag haben wir heute",
+    "welcher tag"
+  ],
+  "lauter": [
+    "mach die musik lauter",
+    "musik lauter",
+    "lauter"
+  ],
+  "wecker_löschen": [
+    "timer aus",
+    "alarm aus",
+    "wecker aus",
+    "mach den timer aus",
+    "timer stop",
+    "alarm stop",
+    "wecker stop",
+    "mach den wecker aus",
+    "sei still"
+  ],
+  "wecker_hinzufügen": [
+    "neuer timer auf",
+    "timer auf",
+    "neuer alarm auf",
+    "alarm auf",
+    "neuer wecker auf",
+    "wecker auf"
+  ],
+  "notiz": [
+    "lese meine notizen",
+    "was habe ich notiert",
+    "was habe ich mir notiert",
+    "was hast du notiert",
+    "was hast du dir gemerkt",
+    "an was sollte ich denken",
+    "an was wollte ich mich erinnern",
+    "was steht an"
+  ],
+  "notiz_hinzufügen": [
+    "neue notiz",
+    "merke dir",
+    "notiere dir",
+    "notiere mir",
+    "erstelle eine neue notiz",
+    "erstelle eine notiz",
+    "was sind meine notiz"
+  ],
+  "notiz_leeren": [
+    "neuer notizzettel",
+    "neuer notiz zettel",
+    "lösche alle notizen",
+    "lösche notizen",
+    "lösch alle notizen",
+    "vergesse alles",
+    "reinige dein gehirn",
+    "reinige deinen kopf",
+    "leere dein gedächtnis"
+  ],
+  "cpu": [
+    "cpu temperatur"
+  ]
+}
