@@ -11,7 +11,7 @@ Otto is a voice assistant originally developed for my Raspberry Pi to control my
 If you have [Git](https://git-scm.com/) installed, you can run the following from your terminal:
 
 ```
-git clone https://github.com/dsgnhb/discord-bot.git
+git clone https://github.com/matthiaaas/otto-assistant.git
 ```
 
 This will clone this repository and download it to your computer.
@@ -46,7 +46,7 @@ News
 > Otto, was gibt's Neues?
 
 Info
-> Otto, wer ist Barack Obama
+> Otto, wer ist Barack Obama?
 
 To stop the assistant just close the window or - when using the terminal - interrupt the program with `ctrl + c`.
 
