@@ -108,7 +108,7 @@ class AI:
     """
     def checkWorkingSystem():
         # os is windows
-        if platform.system() == "Windows" or plat.system() == "Linux":
+        if platform.system() == "Windows" or platform.system() == "Linux":
             return True
         # os is not Windows / Linux
         else:
@@ -120,16 +120,6 @@ class AI:
     log (to console)
     """
     def log(text):
-        # disable umlauts
-        # small letters
-        text = text.replace("ä", "ae")
-        text = text.replace("ö", "oe")
-        text = text.replace("ü", "ue")
-        # big letters
-        text = text.replace("Ä", "Ae")
-        text = text.replace("Ö", "Oe")
-        text = text.replace("Ü", "Ue")
-
         # log
         print("AI: {}".format(text))
 
@@ -145,10 +135,7 @@ class AI:
             playsound.playsound(file, True)
         # file is not a .wav file
         else:
-            print("Playing")
-            playsound.playsound(file)
-            # error
-            #raise AssertionError
+            return True
 
 
     """
@@ -161,7 +148,7 @@ class AI:
         # on RPi aiy.tts
         # on Windows win32com speech engine
         # on Mac standard preinstalled 'say'
-        # on Linux bad and slow
+        # on Linux gTTS: bad and slow
         AI.log("(!) long delay because of bad TTS solution: much better on Windows, RPi, Mac")
         # tts
         with NamedTemporaryFile() as f:
@@ -175,6 +162,7 @@ class AI:
 
     def timerExpired():
         time_set = AI.settings.timer
+        # actual time
         time_now = time.time()
         # check if timer is set
         if time_set != None:
@@ -204,6 +192,8 @@ class AI:
     (only on RPi version)
     """
     def routineLoopControl():
+        # this is a ghost line
+        # (originally loop for online UI)
         pass
 
 
@@ -217,7 +207,7 @@ class AI:
         recognizer.energy_threshold = 200
 
         AI.log("Cleaning AI...")
-
+        # this is a ghost line
 
         AI.log("Starting routines...")
         # start a new thread
@@ -230,6 +220,8 @@ class AI:
     """
     def clean():
         AI.log("Cleaning AI...")
+        # this is a ghost line
+        
         # close the AI session
         AI.settings.close = True
 
