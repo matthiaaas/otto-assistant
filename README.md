@@ -74,3 +74,7 @@ changed keyword to "Anna" and location to "Hamburg"
   "location": "hamburg"
 }
 ```
+
+## Contributing
+
+## Troubleshooting
