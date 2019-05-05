@@ -49,18 +49,17 @@ from commands import (
 
 # command packages linked to their keyword
 commands = {
-    "uhr": cmd_time,
-    "datum": cmd_date,
-    "tag": cmd_date,
-    "wetter": cmd_weather,
-    "wetterbericht": cmd_weather_forecast,
-    "nachrichten": cmd_news,
+    "time": cmd_time,
+    "date": cmd_date,
+    "weather": cmd_weather,
+    "weatherforecast": cmd_weather_forecast,
+    "news": cmd_news,
     "echo": cmd_echo,
-    "notiz": cmd_note_read,
-    "notiz_hinzufügen": cmd_note_add,
-    "notiz_leeren": cmd_note_clear,
-    "wecker_hinzufügen": cmd_clock_set,
-    "wecker_löschen": cmd_clock_reset,
+    "note": cmd_note_read,
+    "note_add": cmd_note_add,
+    "note_clear": cmd_note_clear,
+    "clock_set": cmd_clock_set,
+    "clock_reset": cmd_clock_reset,
 }
 
 
@@ -135,7 +134,7 @@ class AI:
             playsound.playsound(file, True)
         # file is not a .wav file
         else:
-            return True
+            raise AssertionError
 
 
     """
@@ -221,7 +220,7 @@ class AI:
     def clean():
         AI.log("Cleaning AI...")
         # this is a ghost line
-        
+
         # close the AI session
         AI.settings.close = True
 
@@ -309,19 +308,19 @@ class AI:
         cmd_text = None
         # scan the phrases file
         # for every command name
-        for cmd_reply in phrasesFileData:
+        for cmd_title in phrasesFileData:
             # for every command phrase and keyword
-            for cmd_phrase in phrasesFileData[cmd_reply]:
+            for cmd_phrase in phrasesFileData[cmd_title][AI.settings.language]["data"]:
                 # check if phrase in microphone input
                 if cmd_phrase in microphone_input:
                     # phrase is in microphone input
                     # user wants to execute this command
-                    cmd = cmd_reply
+                    cmd = cmd_title
                     cmd_text = cmd_phrase
-                    # check if command list contains cmd_reply
-                    if commands.__contains__(cmd_reply):
+                    # check if command list contains cmd_title
+                    if commands.__contains__(cmd_title):
                         # get the function an execute command
-                        commands.get(cmd_reply).ex(AI, cmd, cmd_text, microphone_input)
+                        commands.get(cmd_title).ex(AI, cmd, cmd_text, microphone_input)
                     # else: the command is not added yet
                     else:
                         # something crazy happened
@@ -334,11 +333,11 @@ class AI:
             # nothing replied
             # scan the phrases file again
             # for every command name
-            for cmd_reply in phrasesFileData:
+            for cmd_title in phrasesFileData:
                 # check if microphone input contains cmd name
-                if cmd_reply in microphone_input:
-                    # asky if the user wants to execute the command
-                    AI.say("Möchtest du den Befehl {} ausführen?".format(cmd_reply))
+                if phrasesFileData[cmd_title][AI.settings.language]["keyword"] in microphone_input:
+                    # ask if the user wants to execute the command
+                    AI.say("Möchtest du den Befehl {} ausführen?".format(phrasesFileData[cmd_title][AI.settings.language]["keyword"]))
                     y_n_microphone_input = None
                     # listen to ambient (for yes or no)
                     y_n_microphone_input = AI.recognizeAudio().lower()
@@ -349,13 +348,13 @@ class AI:
                         with open("data/cache/phrases.json", "r+", encoding="utf-8") as phrasesFile:
                             phrasesFileData = json.load(phrasesFile)
                         # add the new phrase to the command list
-                        phrasesFileData[cmd_reply].append(microphone_input)
+                        phrasesFileData[cmd_title][AI.settings.language]["data"].append(microphone_input)
                         # write the list to the file
                         with open("data/cache/phrases.json", "r+", encoding="utf-8") as phrasesFile:
                             json.dump(phrasesFileData, phrasesFile, indent=2, ensure_ascii=False)
                         AI.say("Ich habe den Befehl hinzugefügt")
                         # set the cmd and reply
-                        cmd = cmd_reply
+                        cmd = cmd_title
                         AI.findOutput(microphone_input)
                         break
                     # input doesn't contain 'ja'
