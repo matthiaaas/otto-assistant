@@ -1,0 +1,272 @@
+{
+  "time": {
+    "de-DE": {
+      "keyword": "uhr",
+      "data": [
+        "wie spät ist es",
+        "wie viel uhr ist es",
+        "was ist die uhrzeit",
+        "wie ist die uhrzeit",
+        "was sagt die uhr",
+        "wie viel uhr ist das"
+      ]
+    },
+    "en-US": {
+      "keyword": "time",
+      "data": [
+        "what's the time"
+      ]
+    }
+  },
+  "date": {
+    "de-DE": {
+      "keyword": "datum",
+      "data": [
+        "welcher tag ist heute",
+        "welchen tag haben wir heute",
+        "welcher tag",
+        "welches datum haben wir heute",
+        "welches datum ist heute"
+      ]
+    },
+    "en-US": {
+      "keyword": "date",
+      "data": [
+        "what's the day today"
+      ]
+    }
+  },
+  "weather": {
+    "de-DE": {
+      "keyword": "wetter",
+      "data": [
+        "wie ist das wetter",
+        "wie ist das wetter heute",
+        "wie warm ist es",
+        "wie kalt ist es",
+        "wie sind die temperaturen",
+        "regnet es",
+        "scheint die sonne"
+      ]
+    },
+    "en-US": {
+      "keyword": "weather",
+      "data": [
+        "what's the weather like"
+      ]
+    }
+  },
+  "weatherforecast": {
+    "de-DE": {
+      "keyword": "wetterbericht",
+      "data": [
+        "wie wird das wetter",
+        "wie ist das wetter morgen",
+        "wie wird das wetter morgen sein",
+        "wie warm ist es morgen",
+        "wie kalt is es morgen",
+        "wie warm wird es",
+        "wie kalt wird es",
+        "wird es morgen kalt",
+        "wird es morgen warm",
+        "wie ist der wetterbericht",
+        "was sagt der wetterbericht",
+        "wie werden die temperaturen"
+      ]
+    },
+    "en-US": {
+      "keyword": "weather report",
+      "data": [
+        "what's the weather report"
+      ]
+    }
+  },
+  "news": {
+    "de-DE": {
+      "keyword": "nachrichten",
+      "data": [
+        "was gibt es neues",
+        "was gibt's neues",
+        "was sind die nachrichten"
+      ]
+    },
+    "en-US": {
+      "keyword": "news",
+      "data": [
+        "what are the news"
+      ]
+    }
+  },
+  "echo": {
+    "de-DE": {
+      "keyword": "wiederhole",
+      "data": [
+        "sprich mir nach",
+        "wiederhole",
+        "sage"
+      ]
+    },
+    "en-US": {
+      "keyword": "repeat",
+      "data": [
+        "repeat",
+        "say"
+      ]
+    }
+  },
+  "louder": {
+    "de-DE": {
+      "keyword": "lauter",
+      "data": [
+        "mach die musik lauter",
+        "musik lauter",
+        "lauter"
+      ]
+    },
+    "en-US": {
+      "keyword": "louder",
+      "data": [
+        "volume up",
+        "more sound"
+      ]
+    }
+  },
+  "quieter": {
+    "de-DE": {
+      "keyword": "leiser",
+      "data": [
+        "mach die musik leiser",
+        "musik leiser",
+        "leiser"
+      ]
+    },
+    "en-US": {
+      "keyword": "quieter",
+      "data": [
+        "volume down",
+        "less sound"
+      ]
+    }
+  },
+  "note": {
+    "de-DE": {
+      "keyword": "notiz",
+      "data": [
+        "lese meine notizen",
+        "was habe ich notiert",
+        "was habe ich mir notiert",
+        "was hast du notiert",
+        "was hast du dir gemerkt",
+        "an was sollte ich denken",
+        "an was wollte ich mich erinnern",
+        "was steht an"
+      ]
+    },
+    "en-US": {
+      "keyword": "note",
+      "data": [
+        "what are my notes",
+        "read my notes"
+      ]
+    }
+  },
+  "note_add": {
+    "de-DE": {
+      "keyword": "*",
+      "data": [
+        "neue notiz",
+        "merke dir",
+        "notiere dir",
+        "notiere mir",
+        "erstelle eine neue notiz",
+        "erstelle eine notiz",
+        "was sind meine notiz"
+      ]
+    },
+    "en-US": {
+      "keyword": "*",
+      "data": [
+        "new note",
+        "add note",
+        "remember"
+      ]
+    }
+  },
+  "note_clear": {
+    "de-DE": {
+      "keyword": "*",
+      "data": [
+        "neuer notizzettel",
+        "neuer notiz zettel",
+        "lösche alle notizen",
+        "lösche notizen",
+        "lösch alle notizen",
+        "vergesse alles",
+        "reinige dein gehirn",
+        "reinige deinen kopf",
+        "leere dein gedächtnis"
+      ]
+    },
+    "en-US": {
+      "keyword": "*",
+      "data": [
+        "clear notes"
+      ]
+    }
+  },
+  "clock_set": {
+    "de-DE": {
+      "keyword": "*",
+      "data": [
+        "neuer timer auf",
+        "timer auf",
+        "neuer alarm auf",
+        "alarm auf",
+        "neuer wecker auf",
+        "wecker auf"
+      ]
+    },
+    "en-US": {
+      "keyword": "*",
+      "data": [
+        "*"
+      ]
+    }
+  },
+  "clock_reset": {
+    "de-DE": {
+      "keyword": "*",
+      "data": [
+        "timer aus",
+        "alarm aus",
+        "wecker aus",
+        "mach den timer aus",
+        "timer stop",
+        "alarm stop",
+        "wecker stop",
+        "mach den wecker aus",
+        "sei still"
+      ]
+    },
+    "en-US": {
+      "keyword": "*",
+      "data": [
+        "*"
+      ]
+    }
+  },
+  "cpu": {
+    "de-DE": {
+      "keyword": "cpu temperatur",
+      "data": [
+        "cpu temperatur"
+      ]
+    },
+    "en-US": {
+      "keyword": "cpu temperature",
+      "data": [
+        "cpu temperature"
+      ]
+    }
+  }
+}
