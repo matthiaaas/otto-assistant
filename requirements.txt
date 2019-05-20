@@ -1,5 +1,5 @@
 PyAudio==0.2.11
-pypiwin32==223
 gTTS==2.0.3
 SpeechRecognition==3.8.1
 playsound==1.2.2
+pypiwin32==223

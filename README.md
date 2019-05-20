@@ -28,7 +28,7 @@ This script uses some external libraries. Use pip to install all required packag
 pip install -r requirements.txt
 ```
 
-**Note**: This will install the Windows-only package "pypiwin32" on your Linux computer either. Delete this line in the file or install every package manually if you don't want to do so.
+**Note**: This will install the Windows-only package "pypiwin32" on your Linux computer too. Delete this line in the file or install every package manually if you don't want to do so.
 
 ### Check installation
 

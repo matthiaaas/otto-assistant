@@ -9,7 +9,7 @@ import traceback
 # external
 import speech_recognition as sr
 
-from pocketsphinx import LiveSpeech, get_model_path
+# from pocketsphinx import LiveSpeech, get_model_path
 
 # core / core modules
 from core import settings
