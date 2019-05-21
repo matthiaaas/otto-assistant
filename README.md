@@ -28,17 +28,7 @@ This script uses some external libraries. Use pip to install all required packag
 pip install -r requirements.txt
 ```
 
-**Note**: This will install the Windows-only package "pypiwin32" on your Linux computer too. Delete this line in the file or install every package manually if you don't want to do so.
-
-### Check installation
-
-To check if everything is operational start the check-installation.py script.
-
-```
-python check-installation.py
-```
-
-If there's a package missing, this program will help you to fix install.
+**Note**: This will install the Windows-only package "pypiwin32" on your Linux or Mac computer too. This package is not available for other operating systems so it will raise an error on installation. Delete this line in the file or install every package manually.
 
 
 ## Usage
@@ -53,7 +43,7 @@ python run.py
 
 Now you can use the assistant by saying the default keyword "Otto" followed by your command or question. Wait after the keyword "Otto" for the beep sound.
 
-**Note**: Otto in German by default.
+**Note**: Otto is in German by default.
 
 ### Examples
 
@@ -66,7 +56,7 @@ News
 Info
 > Otto, wer ist Barack Obama?
 
-To stop the assistant just close the windows or - when using the terminal - interrupt the program with the shortcut `ctrl + c`.
+To stop the assistant just close the window or - when using the terminal - interrupt the program with the shortcut `ctrl + c`.
 
 
 ## Setup
@@ -117,15 +107,19 @@ Feel free to start new pull requests. I appreciate improved code :)
 
 ### Known bugs
 
-#### "no module named <*>"
+#### "no module named * "
 
-Make sure to have the package installed and runned the `check-installation.py` script
+Make sure to have the package installed and ran the `check-installation.py` script
 
 If you have multiple Python versions (such as Python 2 and Python 3) installed, make sure to run the script in Python 3
 
 #### "RequestError"
 
-Check your WiFi connection. The assistant cannot resolve audio without a working internet conncetion.
+Check your WiFi. The assistant cannot resolve audio without a working internet conncetion.
+
+#### "failed building wheel for pyaudio"
+
+Check out [this issue](https://github.com/SlapBot/stephanie-va/issues/8#issuecomment-307617796).
 
 ### Not your error?
 
