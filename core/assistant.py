@@ -64,7 +64,6 @@ class Assistant:
     def greet(self):
         log.debug("Greeting...")
 
-        print("___________________________________")
         print("")
         print(r"         __       __              ")
         print(r"        /\ \__   /\ \__           ")
@@ -78,7 +77,6 @@ class Assistant:
         print(" Otto *sound*, wie spät ist es?\n")
         print(" Otto *sound*, wie ist das Wetter?")
         print("")
-        print("___________________________________")
 
         tts.say("Hallo, wie kann ich behilflich sein?")
 
@@ -107,6 +105,7 @@ class Assistant:
                 # listen for keyword
                 # wake up on recognized keyword
                 if stt.listen_for_keyword():
+                    log.debug("Back in loop...")
                     # listen for text input
                     audio = stt.listen()
                     # try resolving input

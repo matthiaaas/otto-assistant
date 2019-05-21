@@ -4,12 +4,11 @@ speech-to-text
 
 # built-in
 import os
+import threading
 import traceback
 
 # external
 import speech_recognition as sr
-
-# from pocketsphinx import LiveSpeech, get_model_path
 
 # core / core modules
 from core import settings
@@ -30,6 +29,7 @@ listen
 when finished
 """
 def listen():
+    global audio
     # use microphone as raw input
     with sr.Microphone() as raw_microphone_input:
         log.debug("Listening to ambient...")
@@ -54,62 +54,69 @@ def recognize(audio):
             output = recognizer.recognize_google(audio, language=settings.LANGUAGE)
             # return output as text
         except sr.UnknownValueError:
-            log.info("Speech engine couldn't resolve audio")
+            log.debug("Speech engine couldn't resolve audio")
         except sr.RequestError:
-            log.info("You need a WiFi connection for Google STT")
+            log.error("You need a WiFi connection for Google STT")
         except:
             traceback.print_exc()
-            log.info("Unkown exception")
+            log.error("Unkown exception")
         finally:
             return output
+
+"""
+recognize for keyword
+(!) CALLBACK of listen_for_keyword
+> stops listening if keyword detected
+"""
+def recognize_for_keyword():
+    global keyword_detected
+    global new_process
+    audio = listen()
+    # start new process
+    new_process = True
+    log.debug("Recognizing keyword...")
+    try:
+        # recognize input
+        input = recognizer.recognize_google(audio, language=settings.LANGUAGE)
+        # check if keyword in input
+        if settings.KEYWORD in input.lower():
+            log.debug("Keyword detected")
+            # to stop listening
+            keyword_detected = True
+        else:
+            log.debug("Keyword not detected in '{}'".format(input))
+    except sr.UnknownValueError:
+        log.debug("Speech engine couldn't resolve audio")
+    except sr.RequestError:
+        log.error("You need a WiFi connection for Google STT")
+    except:
+        log.error("Unkown exception")
+        traceback.print_exc()
 
 """
 listen for keyword
 > returns True if recognized
 """
 def listen_for_keyword():
-    log.info("Waiting for '{}'".format(settings.KEYWORD))
+    log.debug("Keyword loop...")
+    # global processes
+    global keyword_detected
+    global new_process
+    keyword_detected = False
+    new_process = True
+    log.info("Waiting for '{}'...".format(settings.KEYWORD))
     while True:
-        audio = listen()
-        input = recognize(audio)
-        if input:
-            if settings.KEYWORD in input.lower():
-                log.debug("Keyword detected")
-                tts.play_mp3(settings.ACTIVATION_SOUND_PATH)
-                return True
-                break
-            else:
-                log.debug("Keyword not detected in '{}'".format(input))
-
-    # not implemented because of missing German language model
-    # for keyword detection
-    """
-    # path
-    hmm=os.path.join(model_path, "de-de"),
-    lm=os.path.join(model_path, "de-de.lm.bin"),
-    dic=os.path.join(model_path, "cmudict-de-de.dic")
-
-    model_path = get_model_path()
-    # live speech
-    speech = LiveSpeech(
-        verbose=False,
-        sampling_rate=16000,
-        buffer_size=2048,
-        no_search=False,
-        full_utt=False,
-        # path
-        hmm=os.path.join(model_path, "acoustic-model"),
-        lm=os.path.join(model_path, "language-model.lm.bin"),
-        dic=os.path.join(model_path, "pronounciation-dictionary.dict")
-    )
-    # scan every phrase for keyword
-    for phrase in speech:
-        log.info(phrase)
-        # check if keyword in phrase
-        if settings.KEYWORD in str(phrase):
-            # wake up
-            return True
-    """
+        # quit when keyword is detected
+        if keyword_detected:
+            break
+        # if new process is requested
+        if new_process:
+            new_process = False
+            # start async keyword recognizing thread (start new process)
+            threading.Thread(target=recognize_for_keyword).start()
+    # play activation sound
+    tts.play_mp3(settings.ACTIVATION_SOUND_PATH)
+    return True
 
 """
 listen for yes or no
@@ -125,10 +132,8 @@ def listen_for_yn():
             if "ja" in input.lower():
                 log.debug("'Ja' detected")
                 return True
-                break
             elif "nein" in input.lower():
                 log.debug("'Nein' detected")
                 return False
-                break
             else:
                 log.debug("Not detected in '{}'".format(input))
