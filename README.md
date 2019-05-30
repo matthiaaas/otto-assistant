@@ -107,7 +107,7 @@ Feel free to start new pull requests. I appreciate improved code :)
 
 ### Known bugs
 
-#### "no module named * "
+#### "ImportError: no module named * "
 
 Make sure to have the package installed and ran the `check-installation.py` script
 
@@ -120,6 +120,14 @@ Check your WiFi. The assistant cannot resolve audio without a working internet c
 #### "failed building wheel for pyaudio"
 
 Check out [this issue](https://github.com/SlapBot/stephanie-va/issues/8#issuecomment-307617796).
+
+#### "ValueError: Namespace Gst is not available"
+
+Run `sudo apt-get install python-gst-1.0`.
+
+#### "OSError: FLAC conversion utility not available"
+
+Install FLAC via `sudo apt-get install flac`.
 
 ### Not your error?
 
