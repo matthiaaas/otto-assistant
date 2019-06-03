@@ -35,7 +35,7 @@ class Search:
 
         # get a longer text
         except:
-            text_tag = soup.find("div", {"class": "BNeawe s3v9rd AP7Wnd"}).find("span")
+            text_tag = soup.find("div", {"class": "BNeawe s3v9rd AP7Wnd"})
             output = text_tag.getText()
 
         return output
