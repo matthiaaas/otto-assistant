@@ -2,42 +2,26 @@
 check-installation.py
 """
 
-def check_package_installation():
-    missing_packages = False
+def check_for_missing_packages():
     print("Checking packages...")
-    # sr
-    try:
-        import speech_recognition
-    except ModuleNotFoundError:
-        missing_packages = True
-        print("Check installation of the speech recognition module!")
-        print("Run 'pip install SpeechRecognition'")
-    # pyaudio
-    try:
-        import pyaudio
-    except ModuleNotFoundError:
-        missing_packages = True
-        print("Check installation of pyaudio!")
-        print("Run 'pip install PyAudio'")
-    # playsound
-    try:
-        import playsound
-    except ModuleNotFoundError:
-        missing_packages = True
-        print("Check installation of playsound!")
-        print("Run 'pip install playsound'")
-    # gtts
-    try:
-        import gtts
-    except ModuleNotFoundError:
-        missing_packages = True
-        print("Check installation of gTTS!")
-        print("Run 'pip install gtts'")
+    missing_packages = False
+    packages = ["speech_recognition", "pyaudio", "playsound", "gtts"]
+    names = ["SpeechRecognition", "PyAudio", "playsound", "gTTS"]
+    # check all packages
+    for package, name in zip(packages, names):
+        print("Checking for package '{}'...".format(package))
+        try:
+            __import__(package)
+            print(" Found...")
+        except ModuleNotFoundError:
+            missing_packages = True
+            print("Failed to load '{0}' package: Use 'pip install {1}' to install".format(package, name))
+    return missing_packages
 
 print("Checking installation...")
 
 # check package installation
-if not check_package_installation():
+if not check_for_missing_packages():
     print("> All packages installed")
 
     print("Now start the run.py in Python 3!")
