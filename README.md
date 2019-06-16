@@ -28,8 +28,6 @@ This script uses some external libraries. Use pip to install all required packag
 pip install -r requirements.txt
 ```
 
-**Note**: This will install the Windows-only package "pypiwin32" on your Linux or Mac computer too. This package is not available for other operating systems so it will raise an error on installation. Delete this line in the file or install every package manually.
-
 
 ## Usage
 
