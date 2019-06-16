@@ -32,15 +32,8 @@ class Assistant:
         # setup assistant
         self.setup()
 
-        # greeting
-        self.greet()
-
         # quit is false
         self.stop = False
-
-        # run the assistant
-        # and start loop
-        self.run()
 
     """
     setup
@@ -76,7 +69,6 @@ class Assistant:
         print("Basic usage:\n")
         print(" Otto *sound*, wie spät ist es?\n")
         print(" Otto *sound*, wie ist das Wetter?")
-        print("")
 
         tts.say("Hallo, wie kann ich behilflich sein?")
 
@@ -96,6 +88,9 @@ class Assistant:
     run
     """
     def run(self):
+        # greeting
+        self.greet()
+
         # global loop
         while True:
             # check if quit
