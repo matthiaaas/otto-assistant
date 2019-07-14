@@ -103,30 +103,6 @@ Feel free to start new pull requests. I appreciate improved code :)
 
 ## Troubleshooting
 
-### Known bugs
+### You get errors?
 
-#### "ImportError: no module named * "
-
-Make sure to have the package installed and ran the `check-installation.py` script
-
-If you have multiple Python versions (such as Python 2 and Python 3) installed, make sure to run the script in Python 3
-
-#### "RequestError"
-
-Check your WiFi. The assistant cannot resolve audio without a working internet conncetion.
-
-#### "failed building wheel for pyaudio"
-
-Check out [this issue](https://github.com/SlapBot/stephanie-va/issues/8#issuecomment-307617796).
-
-#### "ValueError: Namespace Gst is not available"
-
-Run `sudo apt-get install python-gst-1.0`.
-
-#### "OSError: FLAC conversion utility not available"
-
-Install FLAC via `sudo apt-get install flac`.
-
-### Not your error?
-
-No problem - just start an issue!
+Take a look at the [TROUBLESHOOTING.md](https://github.com/matthiaaas/otto-assistant/blob/master/TROUBLESHOOTING.md)!
