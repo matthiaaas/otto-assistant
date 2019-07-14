@@ -3,8 +3,8 @@ import json
 import time
 
 # core / core modules
-from core import settings
-from core.modules import tts
+from assistant import settings
+from assistant.core.modules import tts
 
 """
 note read

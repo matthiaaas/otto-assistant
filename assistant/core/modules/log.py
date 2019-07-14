@@ -6,8 +6,7 @@ Logs
 import logging
 
 # core
-from core import settings
-
+from assistant import settings
 
 # setup logger
 logger = logging.getLogger(settings.LOGGER_NAME)

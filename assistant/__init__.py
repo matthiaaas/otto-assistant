@@ -7,18 +7,8 @@ import os
 import traceback
 
 # core / core modules
-from core import settings
-from core.modules import log, stt, tts, matching, tasks
-
-
-instance = None
-
-def main():
-    # global access
-    global instance
-    # instance
-    instance = Assistant()
-
+from assistant import settings
+from assistant.core.modules import log, stt, tts, matching, tasks
 
 """
 Assistant

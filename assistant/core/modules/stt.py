@@ -11,8 +11,8 @@ import traceback
 import speech_recognition as sr
 
 # core / core modules
-from core import settings
-from core.modules import log, tts
+from assistant import settings
+from assistant.core.modules import log, tts
 
 
 def setup():
@@ -21,7 +21,7 @@ def setup():
     recognizer = sr.Recognizer()
     # improved dynamic and threshold
     recognizer.dynamic_energy_threshold = False
-    recognizer.energy_threshold = 300
+    recognizer.energy_threshold = 200
 
 """
 listen

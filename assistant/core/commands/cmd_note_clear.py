@@ -2,7 +2,7 @@
 import json
 
 # core / core modules
-from core.modules import tts
+from assistant.core.modules import tts
 
 """
 note clear

@@ -7,11 +7,11 @@ import os
 import json
 
 # core / core modules
-from core import settings
-from core.modules import log, tts, stt
+from assistant import settings
+from assistant.core.modules import log, tts, stt
 
 # core command packages
-from core.commands import (
+from assistant.core.commands import (
     cmd_time,
     cmd_date,
     cmd_weather,

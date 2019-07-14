@@ -2,8 +2,8 @@
 import time
 
 # core modules / packages
-from core.modules import tts
-from core.packages import news
+from assistant.core.modules import tts
+from assistant.core.packages import news
 
 """
 news

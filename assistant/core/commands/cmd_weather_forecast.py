@@ -1,8 +1,8 @@
 # core
-from core import settings
+from assistant import settings
 # core modules / packages
-from core.modules import tts
-from core.packages import weather
+from assistant.core.modules import tts
+from assistant.core.packages import weather
 
 """
 weather forecast

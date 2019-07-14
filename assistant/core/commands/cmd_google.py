@@ -1,6 +1,6 @@
 # core / core modules packages
-from core.modules import tts
-from core.packages import googlesearch
+from assistant.core.modules import tts
+from assistant.core.packages import googlesearch
 
 """
 Google

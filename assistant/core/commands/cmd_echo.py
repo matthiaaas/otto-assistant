@@ -1,5 +1,5 @@
 # core / core modules
-from core.modules import tts
+from assistant.core.modules import tts
 
 """
 echo

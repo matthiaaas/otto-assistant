@@ -2,8 +2,8 @@
 start script
 """
 
-from core import assistant
+import assistant
 
 # run assistant instance
-assistant.main()
-assistant.instance.run()
+instance = assistant.Assistant()
+instance.run()

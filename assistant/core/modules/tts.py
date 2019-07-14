@@ -11,8 +11,8 @@ from tempfile import NamedTemporaryFile as named_temp_file
 from playsound import playsound
 
 # core / core modules
-from core import settings
-from core.modules import log
+from assistant import settings
+from assistant.core.modules import log
 
 
 engine = None

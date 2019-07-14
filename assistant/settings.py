@@ -34,10 +34,10 @@ TTS_AUTODETECT = True
 OPERATING_SYSTEM = ""
 
 # activation sound path on keyword
-ACTIVATION_SOUND_PATH = "data/files/sound/activation.mp3"
+ACTIVATION_SOUND_PATH = "assistant/data/files/sound/activation.mp3"
 
 # phrases file path for matching
-PHRASES_FILE_PATH = "data/files/json/phrases.json"
+PHRASES_FILE_PATH = "assistant/data/files/json/phrases.json"
 
 # logger definitions
 LOGGER_NAME = "otto"
