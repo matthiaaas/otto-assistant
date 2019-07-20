@@ -59,7 +59,7 @@ To stop the assistant just close the window or - when using the terminal - inter
 
 ## Setup
 
-You can easily change the keyword or city by editing the `settings.py`. Navigate into the `core` directory and open the python script in your editor of choice.
+You can easily change the keyword or city by editing the `settings.py`. Navigate into the `assistant` directory and open the python script in your editor of choice.
 
 ### Examples
 
