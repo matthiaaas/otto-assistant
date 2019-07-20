@@ -100,6 +100,9 @@ LOCATION = "hamburg"
 
 Feel free to start new pull requests. I appreciate improved code :)
 
+### TODOs
+
+Take a look at the [TODO.md](https://github.com/matthiaaas/otto-assistant/blob/master/TODO.md) for a list of all planned improvements and features - feel free to contribute!
 
 ## Troubleshooting
 
