@@ -3,7 +3,7 @@ import json
 
 # core / core modules
 from assistant import settings
-from assistant.core.modules import tts
+from assistant.core.modules import tts, replying
 
 """
 note add
@@ -26,4 +26,4 @@ def ex(cmd):
     with open("data/files/json/notes.json", "w", encoding="utf-8") as notes_file:
         json.dump(notes_file_data, notes_file, indent=2, ensure_ascii=False)
 
-    tts.say("Ich habe mir {} für dich gemerkt".format(new_note))
+    tts.say(replying.get_reply("note_add").format(new_note))

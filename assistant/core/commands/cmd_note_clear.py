@@ -2,7 +2,7 @@
 import json
 
 # core / core modules
-from assistant.core.modules import tts
+from assistant.core.modules import tts, replying
 
 """
 note clear
@@ -19,4 +19,4 @@ def ex(cmd):
     with open("data/files/json/notes.json", "w", encoding="utf-8") as notes_file:
         json.dump(notes_file_data, notes_file, indent=2, ensure_ascii=False)
 
-    tts.say("Die Notizliste ist jetzt leer")
+    tts.say(replying.get_reply("note_clear"))

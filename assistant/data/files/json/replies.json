@@ -1,0 +1,174 @@
+{
+  "system": {
+    "greet": {
+      "de-DE": {
+        "data": [
+          "{0} *beep*, wie spät ist es?",
+          "{0} *beep*, wie ist das Wetter?",
+          "{0} *beep*, wie alt ist Barack Obama?",
+          "Hallo, wie kann ich behilflich sein?"
+        ]
+      },
+      "en-US": {
+        "data": [
+          "{0} *beep*, what's the time?",
+          "{0} *beep*, what's the weather like?",
+          "{0} *beep*, how old ist Barack Obama?",
+          "Hello, how can I help you?"
+        ]
+      }
+    },
+    "stt": {
+      "yn_y": {
+        "de-DE": {
+          "data": [
+            "ja"
+          ]
+        },
+        "en-US": {
+          "data": [
+            "yes"
+          ]
+        }
+      },
+      "yn_n": {
+        "de-DE": {
+          "data": [
+            "nein"
+          ]
+        },
+        "en-US": {
+          "data": [
+            "no"
+          ]
+        }
+      }
+    },
+    "matching": {
+      "fail": {
+        "de-DE": {
+          "data": [
+            "Das kann ich dir leider nicht helfen"
+          ]
+        },
+        "en-US": {
+          "data": [
+            "I'm sorry. I cannot help you with that"
+          ]
+        }
+      },
+      "ask": {
+        "de-DE": {
+          "data": [
+            "Möchtest du den Befehl {0} ausführen?"
+          ]
+        },
+        "en-US": {
+          "data": [
+            "Do you want to execute the command {0}?"
+          ]
+        }
+      },
+      "added": {
+        "de-DE": {
+          "data": [
+            "Befehl hinzugefügt"
+          ]
+        },
+        "en-US": {
+          "data": [
+            "Command added"
+          ]
+        }
+      }
+    }
+  },
+  "time": {
+    "de-DE": {
+      "data": [
+        "Es ist {0} Uhr {1}"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "It's {0} {1}"
+      ]
+    }
+  },
+  "date": {
+    "de-DE": {
+      "data": [
+        "Heute ist der {0}te {1} 20{2}"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "Today is the {0} {1} 20{2}"
+      ]
+    }
+  },
+  "news": {
+    "de-DE": {
+      "data": [
+        "Suche nach Nachrichten",
+        "Das sind die neuesten Schlagzeilen"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "Looking for the latest news",
+        "That are the latest news"
+      ]
+    }
+  },
+  "weather": {
+    "de-DE": {
+      "data": [
+        "Zur Zeit gibt es in {0} Grad Celsius bei einer Temperatur von {1} {2} bei Höchstwerten um {3} Grad Celsius"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "There are currently {2} in {0} at a temperature of {1} degrees celsius at highs around {3} degrees celsius"
+      ]
+    }
+  },
+  "note_add": {
+    "de-DE": {
+      "data": [
+        "Ich habe mir {0} für dich gemerkt"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "I remembered {0} for you"
+      ]
+    }
+  },
+  "note_clear": {
+    "de-DE": {
+      "data": [
+        "Ich habe die Notizliste geleert"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "I deleted all memos"
+      ]
+    }
+  },
+  "note_read": {
+    "de-DE": {
+      "data": [
+        "Folgendes habe ich für dich notiert",
+        "Du hast keine Notizen"
+      ]
+    },
+    "en-US": {
+      "data": [
+        "I remembered the following for you",
+        "You got no memos"
+      ]
+    }
+  }
+}

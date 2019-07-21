@@ -9,11 +9,15 @@ import logging
 KEYWORD = "otto"
 
 # sst/tts language used for recognizing
-LANGUAGE = "de-DE"
-LANGUAGE_SHORT = "de"
+LANGUAGE = "en-US"
+# first two letters of language
+LANGUAGE_SHORT = LANGUAGE[:2]
 
 # location used for weather requests and more
-LOCATION = "buehl"
+LOCATION = "berlin"
+# openweatherapi key from their site
+# (neccesary for weather requests)
+WEATHER_API_KEY = ""
 
 # the stt speech engine used to recognize audio
 # (at the moment only google available)
@@ -38,6 +42,16 @@ ACTIVATION_SOUND_PATH = "assistant/data/files/sound/activation.mp3"
 
 # phrases file path for matching
 PHRASES_FILE_PATH = "assistant/data/files/json/phrases.json"
+# replies file path for replying
+REPLIES_FILE_PATH = "assistant/data/files/json/replies.json"
+
+# news ticks
+# (how man titles from the news page)
+MAX_NEWS_TICKS = 5
+
+# energy threshold for manual ambient
+# noise adaption
+SR_ENERGY_THRESHOLD = 200
 
 # logger definitions
 LOGGER_NAME = "otto"

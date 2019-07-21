@@ -8,7 +8,7 @@ import traceback
 
 # core / core modules
 from assistant import settings
-from assistant.core.modules import log, stt, tts, matching, tasks
+from assistant.core.modules import log, stt, tts, matching, replying, tasks
 
 """
 Assistant
@@ -56,11 +56,12 @@ class Assistant:
         print(r"\ \____/   \ \__\   \ \__\\ \____/")
         print(r" \/___/     \/__/    \/__/ \/___/ ")
         print("")
-        print("Basic usage:\n")
-        print(" Otto *sound*, wie spät ist es?\n")
-        print(" Otto *sound*, wie ist das Wetter?")
+        print("Basic usage:")
+        print(replying.get_reply("greet", system=True).format(settings.KEYWORD))
+        print(replying.get_reply("greet", system=True, stage=1).format(settings.KEYWORD))
+        print(replying.get_reply("greet", system=True, stage=2).format(settings.KEYWORD))
 
-        tts.say("Hallo, wie kann ich behilflich sein?")
+        tts.say(replying.get_reply("greet", system=True, stage=3))
 
     """
     quit

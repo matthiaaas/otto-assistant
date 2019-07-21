@@ -4,7 +4,7 @@ import time
 
 # core / core modules
 from assistant import settings
-from assistant.core.modules import tts
+from assistant.core.modules import tts, replying
 
 """
 note read
@@ -17,10 +17,10 @@ def ex(cmd):
     with open("data/files/json/notes.json", "r+", encoding="utf-8") as notes_file:
         notes_file_data = json.load(notes_file)
 
-    tts.say("Folgendes habe ich für dich notiert")
+    tts.say(replying.get_reply("note_read"))
 
     if len(notes_file_data["notes"]) == 0:
-        tts.say("Du hast noch kein Notizen")
+        tts.say(replying.get_reply("note_read", stage=1))
 
     else:
         # read every note

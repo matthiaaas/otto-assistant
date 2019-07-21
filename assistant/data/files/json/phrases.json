@@ -32,7 +32,8 @@
     "en-US": {
       "keyword": "date",
       "data": [
-        "what's the day today"
+        "what's the day today",
+        "what's the date today"
       ]
     }
   },
@@ -269,6 +270,24 @@
       "keyword": "cpu temperature",
       "data": [
         "cpu temperature"
+      ]
+    }
+  },
+  "me_info": {
+    "de-DE": {
+      "keyword": "hilfe",
+      "data": [
+        "wer bist du",
+        "hey du",
+        "was kannst du",
+        "wie kannst du mir helfen"
+      ]
+    },
+    "en-US": {
+      "keyword": "help",
+      "data": [
+        "how can you help me",
+        "who are you"
       ]
     }
   }

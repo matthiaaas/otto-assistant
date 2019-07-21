@@ -12,7 +12,7 @@ import speech_recognition as sr
 
 # core / core modules
 from assistant import settings
-from assistant.core.modules import log, tts
+from assistant.core.modules import log, tts, replying
 
 
 def setup():
@@ -21,7 +21,7 @@ def setup():
     recognizer = sr.Recognizer()
     # improved dynamic and threshold
     recognizer.dynamic_energy_threshold = False
-    recognizer.energy_threshold = 200
+    recognizer.energy_threshold = settings.SR_ENERGY_THRESHOLD
 
 """
 listen
@@ -124,16 +124,19 @@ listen for yes or no
 for yes or no
 """
 def listen_for_yn():
-    log.info("Waiting for 'ja' or 'nein'")
+    # get yes and no replies
+    yes = replying.get_reply(["stt", "yn_y"], system=True, module=True)
+    no = replying.get_reply(["stt", "yn_n"], system=True, module=True)
+    log.info("Waiting for {0} or {1}".format(yes, no))
     while True:
         audio = listen()
         input = recognize(audio)
         if input:
-            if "ja" in input.lower():
-                log.debug("'Ja' detected")
+            if yes in input.lower():
+                log.debug("'{}' detected".format(yes))
                 return True
-            elif "nein" in input.lower():
-                log.debug("'Nein' detected")
+            elif no in input.lower():
+                log.debug("'{}' detected".format(no))
                 return False
             else:
                 log.debug("Not detected in '{}'".format(input))

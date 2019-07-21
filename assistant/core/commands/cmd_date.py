@@ -2,7 +2,8 @@
 from datetime import datetime
 
 # core / core modules
-from assistant.core.modules import tts
+from assistant import settings
+from assistant.core.modules import tts, replying
 
 """
 date
@@ -18,11 +19,16 @@ def ex(cmd):
     year = datetime.now().strftime("%y") # year
 
     # change the month (number to word)
-    months = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
-    month = months[int(month)-1]
+    months = {
+        "de-DE":
+            ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
+        "en-US":
+            ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        }
+    month = months[settings.LANGUAGE][int(month)-1]
 
     # replace a zero with nothing
     if day.startswith("0"):
         day = day.replace("0", "")
 
-    tts.say("Heute ist der {0}te {1} 20{2}".format(day, month, year))
+    tts.say(replying.get_reply("date").format(day, month, year))

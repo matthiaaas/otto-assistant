@@ -1,12 +1,12 @@
 # otto-assistant
 
-Otto is a voice assistant originally developed for my Raspberry Pi to control my room from an online UI. He upgrades his phrases dictionary automatically based on your microphone input.
+Otto is a voice assistant originally developed for my Raspberry Pi to control my room from an online UI. He updates his phrases dictionary automatically based on your microphone input.
 
 ## Installation
 
 ### Requirements
 
-- Python 3.6.7 (recommended)
+- Python 3.6.7 (recommended for less errors on installation)
 
 ### Downloading
 
@@ -41,18 +41,18 @@ python run.py
 
 Now you can use the assistant by saying the default keyword "Otto" followed by your command or question. Wait after the keyword "Otto" for the beep sound.
 
-**Note**: Otto is in German by default.
+**Note**: Otto is in English by default.
 
 ### Examples
 
 Weather
-> Otto, wie ist das Wetter heute?
+> Otto, what's the weather like?
 
 News
-> Otto, was gibt's Neues?
+> Otto, what are the news?
 
 Info
-> Otto, wer ist Barack Obama?
+> Otto, who is Barack Obama?
 
 To stop the assistant just close the window or - when using the terminal - interrupt the program with the shortcut `ctrl + c`.
 
@@ -93,12 +93,31 @@ updated: loaction is now "Hamburg"
 LOCATION = "hamburg"
 ```
 
+#### Change API key
+
+default
+```py
+# openweatherapi key from their site
+# (necessary for weather requests)
+WEATHER_API_KEY = ""
+```
+
+updated: your individual api key (keep it secret)
+You can create your own free key [here](https://home.openweathermap.org/api_keys)!
+```py
+# openweatherapi key from their site
+# (necessary for weather requests)
+WEATHER_API_KEY = "0abc1def2ghi3jkl4mno5pqr6stu"
+```
+
 **Note**: Use lowercase letters.
 
 
 ## Contributing
 
 Feel free to start new pull requests. I appreciate improved code :)
+
+If you wish to have a specific feature supported, start a new issue.
 
 ### TODOs
 

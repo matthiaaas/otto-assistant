@@ -8,7 +8,7 @@ import json
 
 # core / core modules
 from assistant import settings
-from assistant.core.modules import log, tts, stt
+from assistant.core.modules import log, tts, stt, replying
 
 # core command packages
 from assistant.core.commands import (
@@ -21,6 +21,7 @@ from assistant.core.commands import (
     cmd_note_read,
     cmd_note_add,
     cmd_note_clear,
+    cmd_me_info,
     cmd_google
 )
 
@@ -34,7 +35,8 @@ commands = {
     "echo": cmd_echo,
     "note": cmd_note_read,
     "note_add": cmd_note_add,
-    "note_clear": cmd_note_clear
+    "note_clear": cmd_note_clear,
+    "me_info": cmd_me_info
 }
 
 
@@ -74,7 +76,7 @@ def test_match(input):
         keyword = phrases_file_data[cmd_title][settings.LANGUAGE]["keyword"]
         # check if keyword in input
         if keyword in input.lower():
-            tts.say("Möchtest du den Befehl {}  ausführen?".format(keyword))
+            tts.say(replying.get_reply(["matching", "ask"], system=True, module=True).format(keyword))
             yn_input = stt.listen_for_yn()
             # if 'yes'
             if yn_input:
@@ -86,7 +88,7 @@ def test_match(input):
                 # write the list to the file
                 with open(settings.PHRASES_FILE_PATH, "r+", encoding="utf-8") as phrases_file:
                     json.dump(phrases_file_data, phrases_file, indent=2, ensure_ascii=False)
-                tts.say("Befehl hinzugefügt")
+                tts.say(replying.get_reply(["matching", "added"], system=True, module=True))
                 cmd = {"name": cmd_title, "text": phrases_file_data[cmd_title][settings.LANGUAGE]["data"][0], "input": input}
                 return cmd
 
@@ -143,4 +145,4 @@ def execute_match(cmd):
             log.error("Couldn't match command script")
     # type error: no command found
     except TypeError:
-        tts.say("Ich hab keine Ahnung")
+        tts.say(replying.get_reply(["matching", "fail"], system=True, module=True))

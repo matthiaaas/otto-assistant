@@ -1,6 +1,12 @@
-# core / core modules packages
+# built-in
+import requests
+
+from bs4 import BeautifulSoup
+
+# core
+from assistant import settings
+# core modules packages
 from assistant.core.modules import tts
-from assistant.core.packages import googlesearch
 
 """
 Google
@@ -8,9 +14,23 @@ try to find a result
 from Google Search
 """
 def ex(input):
-    search_this = input.replace("otto ", "")
+    # the google search url
+    key_words = input.replace(settings.KEYWORD+" ", "").lower().replace(" ", "+")
+    url = "https://www.google.com/search?q={0}&hl={1}".format(key_words, settings.LANGUAGE_SHORT)
 
-    # try to get a result from google search
-    result = googlesearch.Search.get(search_this)
+    # get the source code from the url
+    source_code = requests.get(url).text
+    # create a bs4 object
+    soup = BeautifulSoup(source_code, features="html.parser")
 
-    tts.say(result)
+    # try to find a short answer
+    try:
+        text_tag = soup.find("div", {"class": "BNeawe iBp4i AP7Wnd"})
+        output = text_tag.getText()
+
+    # get a longer text
+    except:
+        text_tag = soup.find("div", {"class": "xpc"}).find("div", {"class": "BNeawe s3v9rd AP7Wnd"})
+        output = text_tag.getText()
+
+    tts.say(output)
