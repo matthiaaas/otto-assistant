@@ -5,8 +5,8 @@ check-installation.py
 def check_for_missing_packages():
     print("Checking packages...")
     missing_packages = False
-    packages = ["speech_recognition", "pyaudio", "playsound", "gtts"]
-    names = ["SpeechRecognition", "PyAudio", "playsound", "gTTS"]
+    packages = ["speech_recognition", "pyaudio", "playsound", "gtts", "beautifulsoup4"]
+    names = ["SpeechRecognition", "PyAudio", "playsound", "gTTS", "beautifulsoup4"]
     # check all packages
     for package, name in zip(packages, names):
         print("Checking for package '{}'...".format(package))

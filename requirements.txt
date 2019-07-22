@@ -2,4 +2,5 @@ PyAudio==0.2.11
 gTTS==2.0.3
 SpeechRecognition==3.8.1
 playsound==1.2.2
+beautifulsoup4==4.8.0
 pypiwin32==223; sys_platform == 'win32'
