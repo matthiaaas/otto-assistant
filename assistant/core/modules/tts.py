@@ -27,16 +27,16 @@ def setup():
             import win32com.client as win32com
             engine = win32com.Dispatch("SAPI.SpVoice")
         except ModuleNotFoundError:
-            info.error("Couldn't find a module named 'win32com.client'")
-            info.error("Check installation or install via 'pip install pypiwin32'")
+            log.error("Couldn't find a module named 'win32com.client'")
+            log.error("Check installation or install via 'pip install pypiwin32'")
     else:
         try:
             # import module
             from gtts import gTTS
             engine = gTTS
         except ModuleNotFoundError:
-            info.error("Couldn't find a module named 'gtts'")
-            info.error("Check installation or install via 'pip install gtts'")
+            log.error("Couldn't find a module named 'gtts'")
+            log.error("Check installation or install via 'pip install gtts'")
         log.info("(!) Using slow TTS engine on your OS")
 
 """
@@ -61,7 +61,7 @@ def say(text):
     else:
         with named_temp_file() as f:
             # google server request
-            output = engine(text=text, lang=settings.LANGUAGE_SHORT)
+            output = engine.Speak(text=text, lang=settings.LANGUAGE_SHORT)
             # save received file
             output.save(f.name+".mp3")
             # play
