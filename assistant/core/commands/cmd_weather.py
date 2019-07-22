@@ -21,13 +21,16 @@ def ex(cmd):
     # convert json
     content = json.loads(data.text)
 
-    # get data
-    try:
-        # test if there's an error message
+    # get data and
+    # test if there's an error message
+    if "message" in content:
         log.error(content["message"])
-    except:
+        tts.say(content["message"])
+    # or get real data
+    else:
         temp = content["main"]["temp"]
         temp_max = content["main"]["temp_max"]
         desc = content["weather"][0]["description"]
 
-    tts.say(replying.get_reply("weather").format(settings.LOCATION, temp, desc, temp_max))
+        tts.say(replying.get_reply("weather").format(
+            settings.LOCATION, temp, desc, temp_max))
