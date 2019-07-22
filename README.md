@@ -41,7 +41,7 @@ python run.py
 
 Now you can use the assistant by saying the default keyword "Otto" followed by your command or question. Wait after the keyword "Otto" for the beep sound.
 
-**Note**: Otto is in English by default.
+**Note**: Otto is in English by default. In some cases it might be useful to change the keyword to a word that's typical for your language.
 
 ### Examples
 
@@ -116,6 +116,7 @@ WEATHER_API_KEY = "0abc1def2ghi3jkl4mno5pqr6stu"
 ## Contributing
 
 Feel free to start new pull requests. I appreciate improved code :)
+Please take a look at [Gitmoji](https://gitmoji.carloscuesta.me/) for all your commits for consistent messages.
 
 If you wish to have a specific feature supported, start a new issue.
 
