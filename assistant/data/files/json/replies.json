@@ -124,7 +124,7 @@
   "weather": {
     "de-DE": {
       "data": [
-        "Zur Zeit gibt es in {0} Grad Celsius bei einer Temperatur von {1} {2} bei Höchstwerten um {3} Grad Celsius"
+        "Zur Zeit gibt es in {0} bei einer Temperatur von {1} Grad Celsius {2} bei Höchstwerten um {3} Grad Celsius"
       ]
     },
     "en-US": {

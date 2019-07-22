@@ -95,7 +95,8 @@
     "en-US": {
       "keyword": "news",
       "data": [
-        "what are the news"
+        "what are the news",
+        "what are the latest news"
       ]
     }
   },
