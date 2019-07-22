@@ -1,5 +1,6 @@
 # built-in
 from datetime import datetime
+import locale
 
 # core / core modules
 from assistant import settings
@@ -10,25 +11,19 @@ date
 says the date
 """
 def ex(cmd):
-    # imports
-    from datetime import datetime
+    # set locale to get the right month names
+    locale.setlocale(locale.LC_TIME, settings.LANGUAGE.replace("-", "_"))
 
     # get the date
-    day = datetime.now().strftime("%d") # day
-    month = datetime.now().strftime("%m") # month
-    year = datetime.now().strftime("%y") # year
+    date = datetime.now()
 
-    # change the month (number to word)
-    months = {
-        "de-DE":
-            ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"],
-        "en-US":
-            ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-        }
-    month = months[settings.LANGUAGE][int(month)-1]
+    # get the day (and remove leading zero)
+    day = date.strftime("%d").lstrip("0")
 
-    # replace a zero with nothing
-    if day.startswith("0"):
-        day = day.replace("0", "")
+    # get the month name
+    month = date.strftime("%B")
+
+    # get the year
+    year = date.strftime("%Y")
 
     tts.say(replying.get_reply("date").format(day, month, year))
