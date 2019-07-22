@@ -9,11 +9,11 @@ time
 says the current time
 """
 def ex(cmd):
+    # get the date
+    date = datetime.now()
+
     # get the time
-    uhrzeit = datetime.now().strftime("%H:%M")
+    hour = date.strftime("%H")
+    minute = date.strftime("%M")
 
-    # make the time ready to read
-    h = uhrzeit.split(":")[0]
-    m = uhrzeit.split(":")[1]
-
-    tts.say(replying.get_reply("time").format(h, m))
+    tts.say(replying.get_reply("time").format(hour, minute))
