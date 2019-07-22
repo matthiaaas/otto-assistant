@@ -85,7 +85,7 @@ class Assistant:
         # global loop
         while True:
             # check if quit
-            if self.stop == True:
+            if self.stop:
                 break
             try:
                 # listen for keyword
@@ -95,15 +95,15 @@ class Assistant:
                     # listen for text input
                     audio = stt.listen()
                     # try resolving input
-                    input = stt.recognize(audio)
+                    audio_input = stt.recognize(audio)
                     # check if text input received
-                    if not input:
+                    if not audio_input:
                         log.info("Couldn't resolve audio...")
                         continue
                     else:
-                        log.info("Catched input '{}'...".format(input))
+                        log.info("Catched input '{}'...".format(audio_input))
                     # find match
-                    cmd = matching.get_match(input)
+                    cmd = matching.get_match(audio_input)
                     # execute match
                     matching.execute_match(cmd)
             # user interrupted program

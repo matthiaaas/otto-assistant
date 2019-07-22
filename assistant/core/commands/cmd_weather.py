@@ -5,7 +5,7 @@ import requests
 # core
 from assistant import settings
 # core modules / packages
-from assistant.core.modules import tts, replying
+from assistant.core.modules import log, tts, replying
 
 """
 weather

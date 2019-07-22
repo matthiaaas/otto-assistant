@@ -119,7 +119,7 @@ def get_match(input):
     for job in range(len(jobs)):
         cmd = jobs[job](input)
         # check if matched
-        if cmd != None:
+        if cmd is not None:
             log.debug("Matched command '{}'".format(cmd["name"]))
             return cmd
         else:

@@ -98,12 +98,12 @@
   "date": {
     "de-DE": {
       "data": [
-        "Heute ist der {0}te {1} 20{2}"
+        "Heute ist der {0}te {1} {2}"
       ]
     },
     "en-US": {
       "data": [
-        "Today is the {0} {1} 20{2}"
+        "Today is the {0} {1} {2}"
       ]
     }
   },

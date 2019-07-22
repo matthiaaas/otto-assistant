@@ -21,22 +21,22 @@ def setup():
     global engine
     # tts engine setup
     # detect OS
-    if platform.system() == "Windows" and settings.TTS_AUTODETECT == True:
+    if platform.system() == "Windows" and settings.TTS_AUTODETECT:
         try:
             # import module
             import win32com.client as win32com
             engine = win32com.Dispatch("SAPI.SpVoice")
         except ModuleNotFoundError:
-            info.error("Couldn't find a module named 'win32com.client'")
-            info.error("Check installation or install via 'pip install pypiwin32'")
+            log.error("Couldn't find a module named 'win32com.client'")
+            log.error("Check installation or install via 'pip install pypiwin32'")
     else:
         try:
             # import module
             from gtts import gTTS
             engine = gTTS
         except ModuleNotFoundError:
-            info.error("Couldn't find a module named 'gtts'")
-            info.error("Check installation or install via 'pip install gtts'")
+            log.error("Couldn't find a module named 'gtts'")
+            log.error("Check installation or install via 'pip install gtts'")
         log.info("(!) Using slow TTS engine on your OS")
 
 """
@@ -52,10 +52,10 @@ def play_mp3(file):
 say
 """
 def say(text):
-    if settings.TTS_SUBTITLE != False:
+    if settings.TTS_SUBTITLE:
         log.info(text)
     # Windows
-    if platform.system() == "Windows" and settings.TTS_AUTODETECT == True:
+    if platform.system() == "Windows" and settings.TTS_AUTODETECT:
         engine.Speak(text)
     # other OS
     else:
