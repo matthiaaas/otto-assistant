@@ -61,7 +61,7 @@ def say(text):
     else:
         with named_temp_file() as f:
             # google server request
-            output = engine.Speak(text=text, lang=settings.LANGUAGE_SHORT)
+            output = engine(text=text, lang=settings.LANGUAGE_SHORT)
             # save received file
             output.save(f.name+".mp3")
             # play
