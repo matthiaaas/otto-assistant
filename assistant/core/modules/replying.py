@@ -14,16 +14,16 @@ get reply
 """
 def get_reply(cmd, system=False, module=False, stage=0):
     # keep console clean
-    if system == False:
+    if not system:
         log.debug("Getting reply...")
     # read replies file
     # and compile json data
     with open(settings.REPLIES_FILE_PATH, "r+", encoding="utf-8") as replies_file:
         replies_file_data = json.load(replies_file)
     # check if call is a system call
-    if system == True:
+    if system:
         # get reply in given language and requested stage
-        if module == True:
+        if module:
             reply = replies_file_data["system"][cmd[0]][cmd[1]][settings.LANGUAGE]["data"][stage]
         else:
             reply = replies_file_data["system"][cmd][settings.LANGUAGE]["data"][stage]

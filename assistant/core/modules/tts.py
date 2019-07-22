@@ -21,7 +21,7 @@ def setup():
     global engine
     # tts engine setup
     # detect OS
-    if platform.system() == "Windows" and settings.TTS_AUTODETECT == True:
+    if platform.system() == "Windows" and settings.TTS_AUTODETECT:
         try:
             # import module
             import win32com.client as win32com
@@ -52,10 +52,10 @@ def play_mp3(file):
 say
 """
 def say(text):
-    if settings.TTS_SUBTITLE != False:
+    if settings.TTS_SUBTITLE:
         log.info(text)
     # Windows
-    if platform.system() == "Windows" and settings.TTS_AUTODETECT == True:
+    if platform.system() == "Windows" and settings.TTS_AUTODETECT:
         engine.Speak(text)
     # other OS
     else:
