@@ -41,7 +41,7 @@ python run.py
 
 Now you can use the assistant by saying the default keyword "Otto" followed by your command or question. Wait after the keyword "Otto" for the beep sound.
 
-**Note**: Otto is in English by default. In some cases it might be useful to change the keyword to a word that's typical for your language.
+**Note**: Otto is in English by default. In some cases it might be useful to change the keyword to a word that's typical for your language. You can also change the language, see [here](#change-language).
 
 ### Examples
 
@@ -59,7 +59,7 @@ To stop the assistant just close the window or - when using the terminal - inter
 
 ## Setup
 
-You can easily change the keyword or city by editing the `settings.py`. Navigate into the `assistant` directory and open the python script in your editor of choice.
+You can easily change the keyword, language or city by editing the `settings.py`. Navigate into the `assistant` directory and open the python script in your editor of choice.
 
 ### Examples
 
@@ -78,6 +78,20 @@ KEYWORD = "anna"
 ```
 
 **Note**: Use lowercase letters.
+
+#### Change language
+
+default
+```py
+# language you want to speak and get answered in
+LANGUAGE = "en-US"
+```
+
+updated: language is now German
+```py
+# language you want to speak and get answered in
+LANGUAGE = "de-DE"
+```
 
 #### Change location
 

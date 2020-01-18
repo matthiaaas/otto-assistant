@@ -9,6 +9,8 @@ import logging
 KEYWORD = "otto"
 
 # sst/tts language used for recognizing
+# (at the moment only en-US and de-DE available)
+# language you want to speak and get answered in
 LANGUAGE = "en-US"
 # first two letters of language
 LANGUAGE_SHORT = LANGUAGE[:2]
